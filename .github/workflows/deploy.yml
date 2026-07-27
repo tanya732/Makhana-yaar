@@ -37,6 +37,9 @@ jobs:
           # Set this repo secret (Settings → Secrets and variables → Actions).
           # Safe to be public, but kept as a secret for easy rotation.
           VITE_WEB3FORMS_KEY: ${{ secrets.VITE_WEB3FORMS_KEY }}
+          # Repo variables (Settings → Secrets and variables → Actions → Variables).
+          VITE_CONTACT_EMAIL: ${{ vars.VITE_CONTACT_EMAIL }}
+          VITE_CONTACT_PHONE: ${{ vars.VITE_CONTACT_PHONE }}
         run: npm run build
 
       - name: Upload Pages artifact

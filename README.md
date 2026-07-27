@@ -1,7 +1,7 @@
 
 # 🥣 Makhana Yaar — Frontend
 
-A warm, modern, single-page marketing website for **Makhana Yaar**, a roasted fox-nut (makhana) snack brand. This is a **frontend-only** build — there is no backend yet. The contact form and "Add to cart" buttons are UI placeholders.
+A warm, modern, single-page marketing website for **Makhana Yaar**, a roasted fox-nut (makhana) snack brand. It's a **static frontend** — no server to run. The contact form sends real messages through [Web3Forms](https://web3forms.com), and the site deploys to GitHub Pages via GitHub Actions.
 
 Built with **React + Vite**, styled with **Tailwind CSS**, and animated with **Framer Motion**.
 
@@ -9,12 +9,15 @@ Built with **React + Vite**, styled with **Tailwind CSS**, and animated with **F
 
 ## ✨ Sections
 
-1. **Hero** — animated landing with scroll parallax, floating makhana, and a call-to-action.
-2. **Products / Packets** — four flavour packets with prices and "Add" buttons.
-3. **Benefits & Nutrition** — health benefits grid plus a per-100g nutrition strip.
-4. **About** — the brand story and "pond to pocket" process.
-5. **Contact** — contact details and a message form (front-end only).
-6. **Footer** — links and social icons.
+1. **Hero** — animated landing with a glass medallion, feature pills, and a call-to-action.
+2. **TrustBar** — headline stats band.
+3. **Products / Flavours** — flavour packets shown as pen-and-ink doodles.
+4. **Learn (Makhana 101)** — educational explainers about fox nuts, plus a "Did you know?" stat band.
+5. **Benefits & Nutrition** — health benefits grid plus a per-100g nutrition strip.
+6. **Journey** — the "pond to bowl" story from Darbhanga, Bihar.
+7. **About** — the brand story.
+8. **Contact** — contact details and a working message form (Web3Forms).
+9. **Footer** — links and social icons.
 
 The navbar links smooth-scroll between all sections.
 
@@ -29,7 +32,9 @@ The navbar links smooth-scroll between all sections.
 | Styling        | Tailwind CSS 3      |
 | Animations     | Framer Motion       |
 | Icons          | lucide-react        |
-| Fonts          | Fraunces + Nunito Sans (Google Fonts) |
+| Fonts          | Space Grotesk + Inter (Google Fonts) |
+| Form backend   | Web3Forms           |
+| Deploy         | GitHub Pages (GitHub Actions) |
 
 ---
 
@@ -44,19 +49,26 @@ cd makhana-yaar
 npm install
 ```
 
-### 2. Run the dev server
+### 2. Set up the contact form (optional for local dev)
+Copy the template and add a free [Web3Forms](https://web3forms.com) access key:
+```bash
+cp .env.example .env
+```
+Then edit `.env` and set `VITE_WEB3FORMS_KEY` to your key. Without a key the form shows a friendly "not configured yet" message instead of sending. `.env` is git-ignored — never commit it.
+
+### 3. Run the dev server
 ```bash
 npm run dev
 ```
 Open the URL shown in the terminal (usually **http://localhost:5173**). The page hot-reloads as you edit.
 
-### 3. Build for production
+### 4. Build for production
 ```bash
 npm run build
 ```
 The optimized static site is generated in the **`dist/`** folder.
 
-### 4. Preview the production build
+### 5. Preview the production build
 ```bash
 npm run preview
 ```
@@ -69,25 +81,31 @@ npm run preview
 makhana-yaar/
 ├── index.html              # HTML entry + Google Fonts
 ├── package.json
-├── vite.config.js
+├── vite.config.js          # base path for GitHub Pages
 ├── tailwind.config.js      # Brand colours, fonts, animations
 ├── postcss.config.js
+├── .env.example            # Web3Forms key template
+├── .github/workflows/
+│   └── deploy.yml          # GitHub Pages deploy
 ├── public/
 │   └── favicon.svg
 └── src/
     ├── main.jsx            # React entry
     ├── App.jsx             # Assembles all sections
     ├── index.css           # Tailwind + base styles
-    ├── data.js             # Products, benefits, nutrition data
+    ├── data.js             # Products, benefits, nutrition, facts
     └── components/
         ├── Navbar.jsx
         ├── Hero.jsx
+        ├── TrustBar.jsx
         ├── Products.jsx
+        ├── Learn.jsx
         ├── Benefits.jsx
+        ├── Journey.jsx
         ├── About.jsx
         ├── Contact.jsx
         ├── Footer.jsx
-        └── Makhana.jsx     # Decorative SVG
+        └── Doodles.jsx     # Pen-and-ink SVG doodles
 ```
 
 ---
@@ -100,13 +118,36 @@ makhana-yaar/
 
 ---
 
-## 🔌 Adding a Backend Later
+## 📬 Contact form (Web3Forms)
 
-When the backend is ready, wire it into:
-- `Contact.jsx` → `handleSubmit` (currently just shows a confirmation).
-- `Products.jsx` → the **Add** button (currently no-op).
+The form in `Contact.jsx` POSTs to Web3Forms — no backend required.
 
-Point them at your API endpoints (e.g. `fetch('/api/contact', …)`).
+1. Go to [web3forms.com](https://web3forms.com), enter your email, and copy the free access key.
+2. **Locally:** put it in `.env` as `VITE_WEB3FORMS_KEY=...` (see step 2 of Getting Started).
+3. **In production:** set it as a GitHub repo secret (see below) so the deploy build can read it.
+
+Submissions arrive in the inbox tied to your access key.
+
+---
+
+## 🚀 Deploying to GitHub Pages
+
+Deploys run automatically on every push to `main` via `.github/workflows/deploy.yml`.
+
+One-time setup in the GitHub repo:
+
+1. **Settings → Pages → Build and deployment → Source:** choose **GitHub Actions**.
+2. **Settings → Secrets and variables → Actions → New repository secret:** add
+   `VITE_WEB3FORMS_KEY` with your Web3Forms key (so the built form works in production).
+3. Push to `main`. The workflow builds the site and publishes `dist/`.
+
+The site is served from a project subpath, so `vite.config.js` sets:
+```js
+base: '/Makhana-yaar/'
+```
+Live URL: **https://tanya732.github.io/Makhana-yaar/**
+
+> If you rename the repo, update `base` to match the new `/RepoName/` path.
 
 ---
 

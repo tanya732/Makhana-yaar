@@ -1,17 +1,56 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2, AlertCircle } from 'lucide-react'
 import { Boat, Waves } from './Doodles.jsx'
 
-export default function Contact() {
-  const [sent, setSent] = useState(false)
+// Free form backend — get a key at https://web3forms.com and set VITE_WEB3FORMS_KEY.
+const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_KEY
 
-  const handleSubmit = (e) => {
+export default function Contact() {
+  // status: 'idle' | 'sending' | 'success' | 'error'
+  const [status, setStatus] = useState('idle')
+  const [error, setError] = useState('')
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // No backend yet — just show a friendly confirmation.
-    setSent(true)
-    e.target.reset()
-    setTimeout(() => setSent(false), 4000)
+    const form = e.target
+    setStatus('sending')
+    setError('')
+
+    if (!ACCESS_KEY) {
+      setStatus('error')
+      setError('Form is not configured yet. Add a Web3Forms access key to enable sending.')
+      return
+    }
+
+    const payload = {
+      access_key: ACCESS_KEY,
+      subject: 'New message from Makhana Yaar website',
+      from_name: 'Makhana Yaar Website',
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+    }
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      })
+      const data = await res.json()
+      if (data.success) {
+        setStatus('success')
+        form.reset()
+        setTimeout(() => setStatus('idle'), 5000)
+      } else {
+        setStatus('error')
+        setError(data.message || 'Something went wrong. Please try again.')
+      }
+    } catch {
+      setStatus('error')
+      setError('Network error. Please check your connection and try again.')
+    }
   }
 
   return (
@@ -80,18 +119,31 @@ export default function Contact() {
             </div>
             <button
               type="submit"
-              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-orange px-6 py-3.5 font-bold text-cream shadow-lg shadow-orange/30 transition-colors hover:bg-navy"
+              disabled={status === 'sending'}
+              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-orange px-6 py-3.5 font-bold text-cream shadow-lg shadow-orange/30 transition-colors hover:bg-navy disabled:cursor-not-allowed disabled:opacity-70"
             >
-              {sent ? (
+              {status === 'sending' && (
+                <>
+                  <Loader2 size={18} className="animate-spin" /> Sending…
+                </>
+              )}
+              {status === 'success' && (
                 <>
                   <CheckCircle2 size={18} /> Thanks, we'll be in touch!
                 </>
-              ) : (
+              )}
+              {(status === 'idle' || status === 'error') && (
                 <>
                   <Send size={18} /> Send Message
                 </>
               )}
             </button>
+
+            {status === 'error' && (
+              <p className="mt-3 flex items-center gap-2 text-sm font-medium text-orange">
+                <AlertCircle size={16} /> {error}
+              </p>
+            )}
           </motion.form>
         </div>
       </div>

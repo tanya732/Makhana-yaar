@@ -4,3 +4,8 @@ dist-ssr
 *.local
 .DS_Store
 .vite
+
+# Local env (Web3Forms key etc.) — never commit
+.env
+.env.local
+.env.*.local

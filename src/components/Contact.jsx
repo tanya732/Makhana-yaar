@@ -78,8 +78,8 @@ export default function Contact() {
             className="space-y-5"
           >
             {[
-              { icon: Mail, label: 'Email us', value: import.meta.env.VITE_CONTACT_EMAIL },
-              { icon: Phone, label: 'Call us', value: import.meta.env.VITE_CONTACT_PHONE },
+              { icon: Mail, label: 'Email us', value: import.meta.env.VITE_CONTACT_EMAIL || 'makhanayaar@gmail.com' },
+              { icon: Phone, label: 'Call us', value: import.meta.env.VITE_CONTACT_PHONE || '+91 8802248503' },
               { icon: MapPin, label: 'Visit us', value: 'Darbhanga, Bihar, India' },
             ].map((c) => (
               <div key={c.label} className="flex items-center gap-5 rounded-2xl bg-white/70 p-5 ring-1 ring-navy/5">

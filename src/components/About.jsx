@@ -40,8 +40,8 @@ export default function About() {
               <p className="text-sm font-semibold text-navy/60">Natural ingredients</p>
             </div>
             <div>
-              <p className="font-display text-4xl font-black text-orange">4</p>
-              <p className="text-sm font-semibold text-navy/60">Irresistible flavours</p>
+              <p className="font-display text-4xl font-black text-orange">5+</p>
+              <p className="text-sm font-semibold text-navy/60">Suta export-grade</p>
             </div>
             <div>
               <p className="font-display text-4xl font-black text-orange">0</p>

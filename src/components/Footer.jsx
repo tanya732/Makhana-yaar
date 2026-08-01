@@ -1,8 +1,8 @@
 import { Instagram, Facebook, Twitter, Heart } from 'lucide-react'
 
 const cols = [
-  { title: 'Shop', links: ['Peri Peri Punch', 'Cream & Onion', 'Himalayan Salt', 'Jaggery Caramel'] },
-  { title: 'Company', links: ['Our Story', 'Benefits', 'Blog', 'Careers'] },
+  { title: 'Shop', links: ['100 g', '250 g', '500 g'] },
+  { title: 'Company', links: ['Our Story', 'Benefits', 'Learn', 'Bulk Orders'] },
   { title: 'Support', links: ['Contact', 'Shipping', 'Returns', 'FAQs'] },
 ]
 

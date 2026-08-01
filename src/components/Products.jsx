@@ -23,7 +23,7 @@ export default function Products() {
             Pick your kind of crunch
           </h2>
           <p className="mt-4 text-lg text-navy/60">
-            Four handcrafted flavours, roasted to golden perfection. There's a Makhana Yaar for every mood.
+            Premium 5+ Suta export-quality makhana — hygienically processed and packed. Available in convenient pack sizes for retail and bulk orders.
           </p>
         </div>
 

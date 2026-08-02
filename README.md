@@ -1,7 +1,55 @@
 
-# 🥣 Makhana Yaar — Frontend
+# 🥣 Makhana Yaar — Premium Fox Nuts (Makhana)
 
-A warm, modern, single-page marketing website for **Makhana Yaar**, a roasted fox-nut (makhana) snack brand. It's a **static frontend** — no server to run. The contact form sends real messages through [Web3Forms](https://web3forms.com), and the site deploys to GitHub Pages via GitHub Actions.
+Welcome to Makhana Yaar — premium 5+ Suta export-quality makhana (fox nuts). Carefully selected and hygienically processed, our makhana is naturally gluten-free, low in fat, and perfect for healthy snacking, roasting with spices, or using in recipes.
+
+Our Product
+
+- Premium 5+ Suta Export Quality Makhana (Raw Material)
+
+Available Pack Sizes & Pricing
+
+- 100 g — ₹150
+- 250 g — ₹330
+- 500 g — ₹620
+
+Ingredients
+
+100% Premium Natural Makhana (Fox Nuts)
+- No Artificial Colors
+- No Artificial Flavours
+- No Preservatives
+- No Added Chemicals
+
+Nutritional Information (Approx. per 100 g)
+
+- Energy: 347 kcal
+- Protein: 9.7 g
+- Carbohydrates: 76.9 g
+- Dietary Fiber: 7.6 g
+- Total Fat: 0.1 g
+- Calcium: 60 mg
+- Iron: 1.4 mg
+- Potassium: 500 mg
+- Sodium: 9 mg
+
+Health Benefits
+
+- Rich in plant-based protein
+- High in dietary fiber
+- Low in fat
+- Naturally gluten-free
+- Supports a healthy lifestyle
+- Ideal for all age groups
+
+Contact
+
+- Email: makhanayaar@gmail.com
+- Phone: +91 8802248503
+
+Legal Information
+
+Makhana Yaar is a brand of ICL Inc. GST registration and FSSAI (Food License) are held under ICL Inc.
 
 Built with **React + Vite**, styled with **Tailwind CSS**, and animated with **Framer Motion**.
 

@@ -42,7 +42,7 @@ export default function Hero() {
             <span className="inline-flex items-center gap-1 rounded-full bg-orange px-2.5 py-0.5 text-xs font-bold text-white">
               <Sparkles size={12} /> New
             </span>
-            4 flavours now live
+            Premium makhana now available
             <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
           </motion.a>
 

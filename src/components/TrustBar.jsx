@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 const stats = [
   { value: '10k+', label: 'Happy snackers' },
-  { value: '4', label: 'Signature flavours' },
+  { value: '5+ Suta', label: 'Export grade' },
   { value: '9.7g', label: 'Protein / 100g' },
   { value: '4.9★', label: 'Average rating' },
 ]

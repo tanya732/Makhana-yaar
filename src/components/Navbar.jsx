@@ -6,7 +6,6 @@ const links = [
   { label: 'Products', href: '#products' },
   { label: 'Learn', href: '#learn' },
   { label: 'Benefits', href: '#benefits' },
-  { label: 'Journey', href: '#journey' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -45,14 +44,6 @@ export default function Navbar() {
               </a>
             </li>
           ))}
-          <li>
-            <a
-              href="#products"
-              className="rounded-xl bg-navy px-5 py-2.5 font-semibold text-white shadow-lg shadow-navy/25 transition-all hover:-translate-y-0.5 hover:bg-navy-soft"
-            >
-              Shop Now
-            </a>
-          </li>
         </ul>
 
         <button
@@ -78,15 +69,6 @@ export default function Navbar() {
                 </a>
               </li>
             ))}
-            <li>
-              <a
-                href="#products"
-                onClick={() => setOpen(false)}
-                className="block rounded-xl bg-orange px-4 py-3 text-center font-bold text-cream"
-              >
-                Shop Now
-              </a>
-            </li>
           </ul>
         </div>
       )}

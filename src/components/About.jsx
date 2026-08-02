@@ -4,7 +4,7 @@ import { Lotus, MakhanaBowl } from './Doodles.jsx'
 
 const steps = [
   { icon: Sprout, title: 'Sourced with care', desc: 'Hand-picked fox nuts from the ponds of Bihar, where the best makhana grows.' },
-  { icon: Flame, title: 'Roasted, not fried', desc: 'Slow-roasted in small batches for that signature airy crunch — zero deep-frying.' },
+  { icon: Flame, title: 'Roasted, not fried', desc: 'Slow-roasted in small batches for that signature airy crunch, zero deep-frying.' },
   { icon: Heart, title: 'Seasoned with love', desc: 'Tossed in bold, all-natural spices. No junk, no nasty preservatives. Ever.' },
 ]
 
@@ -22,10 +22,10 @@ export default function About() {
         >
           <p className="font-bold uppercase tracking-[0.2em] text-orange">Our Story</p>
           <h2 className="mt-2 font-display text-4xl font-black text-navy sm:text-5xl text-balance">
-            From our pond to your pocket
+            A snack with roots in Bihar
           </h2>
           <p className="mt-5 text-lg text-navy/70">
-            Makhana Yaar started with a simple idea — snacking shouldn't mean choosing between
+            Makhana Yaar started with a simple idea, snacking shouldn't mean choosing between
             <em> tasty</em> and <em> healthy</em>. We grew up on makhana at home, and wanted to
             bring that wholesome, nostalgic crunch to snack shelves everywhere.
           </p>

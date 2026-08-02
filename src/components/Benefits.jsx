@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
-import { Dumbbell, Feather, Wheat, Sparkles, HeartPulse, Leaf } from 'lucide-react'
+import { Dumbbell, Feather, Wheat, Sparkles, HeartPulse, Leaf, Users } from 'lucide-react'
 import { benefits, nutrition } from '../data.js'
 import { Lotus, PalmTree } from './Doodles.jsx'
 
-const icons = { Dumbbell, Feather, Wheat, Sparkles, HeartPulse, Leaf }
+const icons = { Dumbbell, Feather, Wheat, Sparkles, HeartPulse, Leaf, Users }
 
 export default function Benefits() {
   return (
@@ -17,11 +17,11 @@ export default function Benefits() {
             Snacking that loves you back
           </h2>
           <p className="mt-4 text-navy/70">
-            Makhana (fox nuts) are one of nature's smartest snacks — light, wholesome and packed with the good stuff.
+            Makhana is one of nature's smartest snacks light, wholesome and packed with the good stuff.
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {benefits.map((b, i) => {
             const Icon = icons[b.icon]
             return (

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { ImageIcon, Clock } from 'lucide-react'
 import { products } from '../data.js'
 
 const container = {
@@ -19,11 +20,14 @@ export default function Products() {
           <span className="inline-flex items-center rounded-full border border-navy/10 bg-white/60 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-orange backdrop-blur">
             Our packets
           </span>
-          <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-navy sm:text-5xl text-balance">
+          <h2 className="mt-4 flex flex-wrap items-center justify-center gap-3 font-display text-4xl font-bold tracking-tight text-navy sm:text-5xl text-balance">
             Pick your kind of crunch
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-orange px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-sm">
+              <Clock size={13} /> Coming soon
+            </span>
           </h2>
           <p className="mt-4 text-lg text-navy/60">
-            Premium 5+ Suta export-quality makhana — hygienically processed and packed. Available in convenient pack sizes for retail and bulk orders.
+            Four bold flavours of premium 5+ Suta export-quality makhana are on the way. Packet/Jars are launching shortly, so stay tuned!!
           </p>
         </div>
 
@@ -45,19 +49,22 @@ export default function Products() {
                 className="absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-20 blur-2xl transition-opacity group-hover:opacity-40"
                 style={{ background: p.accent }}
               />
-              {/* Packet */}
+              {/* Packet — placeholder until real photos are ready */}
+              {/* TODO: replace this placeholder with the real {p.name} packet image (set `image` in data.js) */}
               <div
-                className="relative mx-auto flex h-52 w-40 flex-col items-center justify-between rounded-[1.4rem] rounded-t-[2.5rem] p-4 text-cream shadow-lg"
+                className="relative mx-auto flex h-52 w-40 flex-col items-center justify-center gap-3 overflow-hidden rounded-[1.4rem] rounded-t-[2.5rem] p-4 text-white shadow-lg"
                 style={{ background: `linear-gradient(160deg, ${p.accent}, ${p.accent}cc)` }}
               >
-                <span className="mt-1 rounded-full bg-cream/20 px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider">
-                  {p.weight}
-                </span>
-                <span className="text-5xl drop-shadow">{p.emoji}</span>
-                <div className="text-center">
-                  <p className="font-display text-sm font-black leading-tight">Makhana Yaar</p>
-                  <p className="text-[11px] font-semibold opacity-90">{p.name}</p>
-                </div>
+                {p.image ? (
+                  <img src={p.image} alt={`Makhana Yaar ${p.name} packet`} className="h-full w-full object-contain" />
+                ) : (
+                  <>
+                    <ImageIcon size={34} className="opacity-80" />
+                    <span className="rounded-full bg-white/20 px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider">
+                      Coming soon
+                    </span>
+                  </>
+                )}
               </div>
 
               <h3 className="mt-5 text-center font-display text-xl font-bold text-navy">{p.name}</h3>

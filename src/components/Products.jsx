@@ -52,11 +52,11 @@ export default function Products() {
               {/* Packet — placeholder until real photos are ready */}
               {/* TODO: replace this placeholder with the real {p.name} packet image (set `image` in data.js) */}
               <div
-                className="relative mx-auto flex h-52 w-40 flex-col items-center justify-center gap-3 overflow-hidden rounded-[1.4rem] rounded-t-[2.5rem] p-4 text-white shadow-lg"
-                style={{ background: `linear-gradient(160deg, ${p.accent}, ${p.accent}cc)` }}
+                className={`relative mx-auto flex w-40 flex-col items-center justify-center gap-3 overflow-hidden p-4 text-white ${p.image ? '' : 'h-52 rounded-[1.4rem] rounded-t-[2.5rem] p-4 shadow-lg'}`}
+                style={p.image ? undefined :{ background: `linear-gradient(160deg, ${p.accent}, ${p.accent}cc)` }}
               >
                 {p.image ? (
-                  <img src={p.image} alt={`Makhana Yaar ${p.name} packet`} className="h-full w-full object-contain" />
+                  <img src={p.image} alt={`Makhana Yaar ${p.name} packet`} className="block h-auto w-full" />
                 ) : (
                   <>
                     <ImageIcon size={34} className="opacity-80" />

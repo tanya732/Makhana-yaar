@@ -1,3 +1,5 @@
+import periPeriImg from './assets/peri-peri.jpeg'
+
 export const products = [
   {
     id: 'flax-seed',
@@ -29,7 +31,7 @@ export const products = [
     tagline: 'Fiery, tangy & bold',
     accent: '#C33B3B',
     // TODO: replace with real Peri Peri packet photo
-    image: '',
+    image: periPeriImg,
   },
 ]
 

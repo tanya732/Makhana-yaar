@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Menu, X, Truck } from 'lucide-react'
+import { Menu, X, Truck, Sparkles } from 'lucide-react'
 
 const links = [
   { label: 'Home', href: '#home' },
@@ -35,6 +35,9 @@ export default function Navbar() {
         <p className="flex items-center justify-center gap-2 px-5 py-1.5 text-center text-xs font-semibold tracking-wide sm:text-sm">
           <Truck size={15} className="text-orange-soft" />
           FREE delivery on all orders above <span className="text-orange-soft">₹499</span>
+          <span className="hidden px-3 text-cream/40 sm:inline">·</span>
+          <Sparkles size={14} className="hidden text-orange-soft sm:inline" />
+          <span className="hidden sm:inline">FREE delivery on your first order</span>
         </p>
       </div>
 

@@ -4,11 +4,11 @@ import { ArrowRight, Sparkles, Star, Check } from 'lucide-react'
 import { PondScene } from './Doodles.jsx'
 import packaging from '../assets/packaging.png'
 
-const pills = ['Roasted, never fried', 'High protein', 'Gluten free', 'Zero cholesterol']
+const pills = ['Roasted, never fried', 'Gluten free', 'Zero cholesterol']
 
 const sizes = [
-  { size: '100g', price: 300, mrp: 375 },
-  { size: '250g', price: 500, mrp: 600 },
+  { size: '100g', price: 130, mrp: 150 },
+  { size: '250g', price: 315, mrp: 350 },
 ]
 
 export default function Hero() {
@@ -95,21 +95,17 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
-            className="mt-7 flex flex-wrap items-center gap-3"
+            className="mt-7 inline-flex w-full max-w-xs divide-x divide-navy/10 overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-[0_12px_30px_-20px_rgba(30,42,74,0.5)]"
           >
             {sizes.map((s) => (
-              <div
-                key={s.size}
-                className="flex items-baseline gap-2 rounded-xl border border-navy/10 bg-white/70 px-4 py-2.5 shadow-sm backdrop-blur"
-              >
-                <span className="text-sm font-semibold text-navy/60">{s.size}</span>
-                <span className="font-display text-xl font-bold text-navy">₹{s.price}</span>
-                <span className="text-sm text-navy/40 line-through">₹{s.mrp}</span>
+              <div key={s.size} className="flex-1 px-4 py-3">
+                <p className="text-[11px] font-semibold uppercase tracking-wide text-navy/50">{s.size}</p>
+                <p className="mt-0.5 flex items-baseline gap-1.5">
+                  <span className="font-display text-xl font-bold text-navy">₹{s.price}</span>
+                  <span className="text-xs text-navy/40 line-through">₹{s.mrp}</span>
+                </p>
               </div>
             ))}
-            <span className="inline-flex items-center gap-1.5 rounded-xl bg-orange/10 px-3 py-2 text-sm font-semibold text-orange">
-              <Sparkles size={14} /> First order free delivery
-            </span>
           </motion.div>
 
           <motion.div

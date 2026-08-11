@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Twitter, Heart } from 'lucide-react'
+import { Instagram, /* Facebook, Twitter, */ Heart } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -11,12 +11,17 @@ export default function Footer() {
           </a>
 
           <div className="flex gap-3">
-            {[Instagram, Facebook, Twitter].map((Icon, i) => (
+            {[
+              { Icon: Instagram, href: 'https://instagram.com/makhanayaar', label: 'Instagram' },
+              // { Icon: Facebook, href: '#', label: 'Facebook' },
+              // { Icon: Twitter, href: '#', label: 'Twitter' },
+            ].map(({ Icon, href, label }) => (
               <a
-                key={i}
-                href="#"
+                key={label}
+                href={href}
+                {...(href !== '#' ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 className="grid h-9 w-9 place-items-center rounded-full bg-cream/10 text-cream transition-colors hover:bg-orange"
-                aria-label="social link"
+                aria-label={label}
               >
                 <Icon size={16} />
               </a>

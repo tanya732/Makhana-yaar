@@ -8,7 +8,7 @@ const pills = ['Roasted, never fried', 'High protein', 'Gluten free', 'Zero chol
 
 const sizes = [
   { size: '100g', price: 300, mrp: 375 },
-  { size: '250g', price: 550, mrp: 600 },
+  { size: '250g', price: 500, mrp: 600 },
 ]
 
 export default function Hero() {

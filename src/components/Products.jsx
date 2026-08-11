@@ -38,55 +38,61 @@ export default function Products() {
           viewport={{ once: true, amount: 0.2 }}
           className="mt-14 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4"
         >
-          {products.map((p) => (
-            <motion.article
-              key={p.id}
-              variants={card}
-              whileHover={{ y: -10 }}
-              className="group relative overflow-hidden rounded-2xl border border-navy/10 bg-white/70 p-6 shadow-[0_18px_50px_-30px_rgba(30,42,74,0.5)] backdrop-blur transition-colors hover:border-orange/40"
-            >
-              <div
-                className="absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-20 blur-2xl transition-opacity group-hover:opacity-40"
-                style={{ background: p.accent }}
-              />
-              {/* Packet — placeholder until real photos are ready */}
-              {/* TODO: replace this placeholder with the real {p.name} packet image (set `image` in data.js) */}
-              <div
-                className={`relative mx-auto flex w-40 flex-col items-center justify-center gap-3 overflow-hidden text-white ${
-                  p.image ? '' : 'h-52 rounded-[1.4rem] rounded-t-[2.5rem] p-4 shadow-lg'
-                }`}
-                style={p.image ? undefined : { background: `linear-gradient(160deg, ${p.accent}, ${p.accent}cc)` }}
+          {products.map((p) => {
+            const off = Math.round((1 - flavourSizes[0].price / flavourSizes[0].mrp) * 100)
+            return (
+              <motion.article
+                key={p.id}
+                variants={card}
+                whileHover={{ y: -10 }}
+                className="group relative flex flex-col overflow-hidden rounded-3xl border border-navy/10 bg-white shadow-[0_18px_50px_-30px_rgba(30,42,74,0.5)] transition-all hover:shadow-[0_30px_60px_-30px_rgba(30,42,74,0.55)]"
               >
-                {p.image ? (
-                  <img src={p.image} alt={`Makhana Yaar ${p.name} packet`} className="block h-auto w-full" />
-                ) : (
-                  <>
-                    <ImageIcon size={34} className="opacity-80" />
-                    <span className="rounded-full bg-white/20 px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider">
-                      Coming soon
-                    </span>
-                  </>
-                )}
-              </div>
-
-              <h3 className="mt-5 text-center font-display text-xl font-bold text-navy">{p.name}</h3>
-              <p className="mt-1 text-center text-sm text-navy/60">{p.tagline}</p>
-
-              <div className="mt-4 flex justify-center gap-2">
-                {flavourSizes.map((s) => (
-                  <div
-                    key={s.size}
-                    className="rounded-xl border border-navy/10 bg-white/60 px-3 py-1.5 text-center"
+                {/* Image panel — full-bleed product photo (native 2:3) */}
+                <div className="relative aspect-[2/3] overflow-hidden bg-white">
+                  {p.image ? (
+                    <img
+                      src={p.image}
+                      alt={`Makhana Yaar ${p.name} makhana`}
+                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                  ) : (
+                    <div
+                      className="flex h-full flex-col items-center justify-center gap-3 text-navy/40"
+                      style={{ background: `linear-gradient(160deg, ${p.accent}14, ${p.accent}05)` }}
+                    >
+                      <ImageIcon size={34} />
+                      <span className="text-[10px] font-bold uppercase tracking-wider">Photo soon</span>
+                    </div>
+                  )}
+                  {/* discount badge */}
+                  <span
+                    className="absolute left-3 top-3 rounded-full px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-white shadow-md"
+                    style={{ background: p.accent }}
                   >
-                    <p className="text-[11px] font-semibold uppercase tracking-wide text-navy/50">{s.size}</p>
-                    <p className="font-display text-base font-bold text-navy">
-                      ₹{s.price} <span className="text-xs font-normal text-navy/40 line-through">₹{s.mrp}</span>
-                    </p>
+                    {off}% OFF
+                  </span>
+                </div>
+
+                {/* Body */}
+                <div className="flex flex-1 flex-col p-5">
+                  <h3 className="font-display text-xl font-bold text-navy">{p.name}</h3>
+                  <p className="mt-0.5 text-sm text-navy/55">{p.tagline}</p>
+
+                  <div className="mt-4 grid grid-cols-2 gap-2">
+                    {flavourSizes.map((s) => (
+                      <div key={s.size} className="rounded-xl bg-cream px-3 py-2 text-center ring-1 ring-navy/5">
+                        <p className="text-[11px] font-semibold uppercase tracking-wide text-navy/50">{s.size}</p>
+                        <p className="font-display text-base font-bold text-navy">
+                          ₹{s.price}{' '}
+                          <span className="text-xs font-normal text-navy/40 line-through">₹{s.mrp}</span>
+                        </p>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </motion.article>
-          ))}
+                </div>
+              </motion.article>
+            )
+          })}
         </motion.div>
       </div>
     </section>

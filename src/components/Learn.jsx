@@ -37,7 +37,7 @@ export default function Learn() {
             <GraduationCap size={14} /> Makhana 101
           </span>
           <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-navy sm:text-5xl text-balance">
-            Wait — what <em className="not-italic text-gradient">is</em> a fox nut?
+            Wait - what <em className="not-italic text-gradient">is</em> a fox nut?
           </h2>
         </div>
 
@@ -65,8 +65,7 @@ export default function Learn() {
 
           {/* Definition text */}
           <p className="font-display text-2xl font-medium leading-relaxed text-navy/80 sm:text-3xl md:col-span-3">
-            Makhana — also called <span className="text-gradient font-semibold">fox nuts</span> —
-            are simply popped lotus seeds: light, crunchy seeds harvested from the{' '}
+            Makhana also called <span className="text-gradient font-semibold">fox nuts</span> are simply popped lotus seeds: light, crunchy seeds harvested from the{' '}
             <em className="not-italic text-navy">Euryale ferox</em> water lily.
           </p>
         </motion.div>

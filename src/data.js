@@ -1,4 +1,13 @@
-import periPeriImg from './assets/peri-peri.jpeg'
+import periPeriImg from './assets/PeriPeriImage.jpeg'
+import saltedImg from './assets/SaltedImage.jpeg'
+import pudinaImg from './assets/PudinaImage.jpeg'
+import flaxSeedImg from './assets/FlaxSeedImage.jpeg'
+
+// Shared across all flavours
+export const flavourSizes = [
+  { size: '50g', price: 110, mrp: 150 },
+  { size: '80g', price: 160, mrp: 220 },
+]
 
 export const products = [
   {
@@ -7,7 +16,7 @@ export const products = [
     tagline: 'Nutty, seed-crusted crunch',
     accent: '#8B5E3C',
     // TODO: replace with real Flax Seed packet photo
-    image: '',
+    image: flaxSeedImg,
   },
   {
     id: 'pudina',
@@ -15,7 +24,7 @@ export const products = [
     tagline: 'Cool, minty & refreshing',
     accent: '#4E8E4A',
     // TODO: replace with real Pudina packet photo
-    image: '',
+    image: pudinaImg,
   },
   {
     id: 'salted',
@@ -23,7 +32,7 @@ export const products = [
     tagline: 'Classic lightly-salted crunch',
     accent: '#3A6EA5',
     // TODO: replace with real Salted packet photo
-    image: '',
+    image: saltedImg,
   },
   {
     id: 'peri-peri',

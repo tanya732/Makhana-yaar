@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Truck } from 'lucide-react'
 
 const links = [
   { label: 'Home', href: '#home' },
@@ -27,6 +27,17 @@ export default function Navbar() {
         scrolled ? 'border-b border-navy/10 bg-cream/80 backdrop-blur-md' : 'bg-transparent'
       }`}
     >
+      <div
+        className={`overflow-hidden bg-navy text-cream transition-all duration-300 ${
+          scrolled ? 'max-h-0 opacity-0' : 'max-h-10 opacity-100'
+        }`}
+      >
+        <p className="flex items-center justify-center gap-2 px-5 py-1.5 text-center text-xs font-semibold tracking-wide sm:text-sm">
+          <Truck size={15} className="text-orange-soft" />
+          FREE delivery on all orders above <span className="text-orange-soft">₹499</span>
+        </p>
+      </div>
+
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
         <a href="#home" className="flex items-center gap-2 font-display text-2xl font-black text-navy">
           <span className="grid h-9 w-9 place-items-center rounded-full bg-orange text-cream">M</span>

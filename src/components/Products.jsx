@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { ImageIcon, Clock } from 'lucide-react'
-import { products } from '../data.js'
+import { products, flavourSizes } from '../data.js'
 
 const container = {
   hidden: {},
@@ -52,8 +52,10 @@ export default function Products() {
               {/* Packet — placeholder until real photos are ready */}
               {/* TODO: replace this placeholder with the real {p.name} packet image (set `image` in data.js) */}
               <div
-                className={`relative mx-auto flex w-40 flex-col items-center justify-center gap-3 overflow-hidden p-4 text-white ${p.image ? '' : 'h-52 rounded-[1.4rem] rounded-t-[2.5rem] p-4 shadow-lg'}`}
-                style={p.image ? undefined :{ background: `linear-gradient(160deg, ${p.accent}, ${p.accent}cc)` }}
+                className={`relative mx-auto flex w-40 flex-col items-center justify-center gap-3 overflow-hidden text-white ${
+                  p.image ? '' : 'h-52 rounded-[1.4rem] rounded-t-[2.5rem] p-4 shadow-lg'
+                }`}
+                style={p.image ? undefined : { background: `linear-gradient(160deg, ${p.accent}, ${p.accent}cc)` }}
               >
                 {p.image ? (
                   <img src={p.image} alt={`Makhana Yaar ${p.name} packet`} className="block h-auto w-full" />
@@ -69,6 +71,20 @@ export default function Products() {
 
               <h3 className="mt-5 text-center font-display text-xl font-bold text-navy">{p.name}</h3>
               <p className="mt-1 text-center text-sm text-navy/60">{p.tagline}</p>
+
+              <div className="mt-4 flex justify-center gap-2">
+                {flavourSizes.map((s) => (
+                  <div
+                    key={s.size}
+                    className="rounded-xl border border-navy/10 bg-white/60 px-3 py-1.5 text-center"
+                  >
+                    <p className="text-[11px] font-semibold uppercase tracking-wide text-navy/50">{s.size}</p>
+                    <p className="font-display text-base font-bold text-navy">
+                      ₹{s.price} <span className="text-xs font-normal text-navy/40 line-through">₹{s.mrp}</span>
+                    </p>
+                  </div>
+                ))}
+              </div>
             </motion.article>
           ))}
         </motion.div>

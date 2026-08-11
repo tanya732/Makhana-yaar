@@ -1,5 +1,11 @@
 import periPeriImg from './assets/peri-peri.jpeg'
 
+// Shared across all flavours
+export const flavourSizes = [
+  { size: '50g', price: 110, mrp: 150 },
+  { size: '80g', price: 160, mrp: 220 },
+]
+
 export const products = [
   {
     id: 'flax-seed',

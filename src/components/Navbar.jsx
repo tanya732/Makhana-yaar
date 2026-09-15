@@ -3,9 +3,8 @@ import { Menu, X, Truck, Sparkles } from 'lucide-react'
 
 const links = [
   { label: 'Home', href: '#home' },
-  { label: 'Products', href: '#products' },
-  { label: 'Learn', href: '#learn' },
-  { label: 'Benefits', href: '#benefits' },
+  { label: 'Shop', href: '#products' },
+  { label: 'Combos', href: '#combos' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ]

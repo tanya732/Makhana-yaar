@@ -2,10 +2,10 @@ import periPeriImg from './assets/PeriPeriImage.jpeg'
 import saltedImg from './assets/SaltedImage.jpeg'
 import pudinaImg from './assets/PudinaImage.jpeg'
 import flaxSeedImg from './assets/FlaxSeedImage.jpeg'
-import combo80gImg from './assets/combo-80g.png'
-import comboFamilySaverImg from './assets/combo-family-saver.png'
-import raw2PackImg from './assets/raw-2pack.png'
-import combo50gImg from './assets/combo-50g.png'
+import combo80gImg from './assets/Combo80g.png'
+import comboFamilySaverImg from './assets/FamilyComboPack.png'
+import raw2PackImg from './assets/RawFamilyFack.png'
+import combo50gImg from './assets/Combo50g.png'
 
 // Shared across all flavours
 export const flavourSizes = [
@@ -53,7 +53,7 @@ export const comboPacks = [
     id: 'combo-80g',
     name: '4 Flavour Combo 80g',
     tagline: 'All four bold flavours in one go. More flavours, more happiness!',
-    contents: ['Peri Peri · Pudina · Flaxseed · Salted', '4 Jars × 80g each', 'Total 320g'],
+    contents: ['4 Flavoured Jars', '4 Jars × 80g each', 'Total 320g'],
     badge: '4 JARS · 80g EACH',
     price: 590,
     mrp: 880,
@@ -64,7 +64,7 @@ export const comboPacks = [
     id: 'family-saver',
     name: 'Family Saver Combo',
     tagline: 'Healthy bites for the whole family. Our best value pack!',
-    contents: ['4 Flavoured Jars × 80g', '+ 250g Raw Makhana', 'Total 570g'],
+    contents: ['4 Flavoured Jars', '+ 250g Raw Makhana', 'Total 570g'],
     badge: 'BEST VALUE',
     price: 890,
     mrp: 1255,
@@ -75,7 +75,7 @@ export const comboPacks = [
     id: 'combo-50g',
     name: '4 Flavour Combo 50g',
     tagline: 'Try all four flavours in snack-sized portions. Perfect starter pack.',
-    contents: ['Peri Peri · Pudina · Flaxseed · Salted', '4 Packs × 50g each', 'Total 200g'],
+    contents: ['4 Flavoured Jars', '4 Packs × 50g each', 'Total 200g'],
     badge: '4 PACKS · 50g EACH',
     price: 450,
     mrp: 600,

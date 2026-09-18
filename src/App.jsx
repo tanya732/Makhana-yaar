@@ -18,7 +18,7 @@ export default function App() {
         <Products />
         <Learn />
         <Benefits />
-        <About />
+        {/* <About /> */}
         <Contact />
       </main>
       <Footer />

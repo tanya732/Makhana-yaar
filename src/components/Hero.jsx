@@ -7,8 +7,8 @@ import packaging from '../assets/packaging.png'
 const pills = ['Roasted, never fried', 'Gluten free', 'Zero cholesterol']
 
 const sizes = [
-  { size: '100g', price: 130, mrp: 150 },
-  { size: '250g', price: 315, mrp: 350 },
+  { size: '100g', price: 150, mrp: 180 },
+  { size: '250g', price: 330, mrp: 375 },
 ]
 
 export default function Hero() {

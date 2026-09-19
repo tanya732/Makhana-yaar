@@ -88,7 +88,7 @@ export const comboPacks = [
     tagline: 'Pure goodness of nature. Daily snacking for travel, work & study.',
     contents: ['2 Packs × 250g Raw Makhana', '100% Natural · No Preservatives', 'Total 500g'],
     badge: '2 PACK · 250g × 2',
-    price: 600,
+    price: 625,
     mrp: 750,
     accent: '#8B5E3C',
     image: raw2PackImg,

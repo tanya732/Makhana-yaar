@@ -27,7 +27,7 @@ const steps = [
 
 export default function Learn() {
   return (
-    <section id="learn" className="relative overflow-hidden bg-cream py-24">
+    <section id="learn" className="relative overflow-hidden bg-cream py-16">
       <div className="pointer-events-none absolute inset-0 bg-grid mask-fade opacity-60" />
       <Lotus className="pointer-events-none absolute -right-8 top-24 w-48 text-navy/[0.07] sm:w-64" />
 

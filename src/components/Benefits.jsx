@@ -7,7 +7,7 @@ const icons = { Dumbbell, Feather, Wheat, Sparkles, HeartPulse, Leaf, Users }
 
 export default function Benefits() {
   return (
-    <section id="benefits" className="relative overflow-hidden bg-gradient-to-b from-cream to-sand py-24 bg-grain">
+    <section id="benefits" className="relative overflow-hidden bg-gradient-to-b from-cream to-sand py-16 bg-grain">
       <PalmTree className="pointer-events-none absolute -left-4 top-20 w-24 text-navy/[0.13] sm:w-32" />
       <Lotus className="pointer-events-none absolute -right-8 bottom-16 w-44 text-navy/[0.13] sm:w-56" />
       <div className="relative mx-auto max-w-6xl px-5">

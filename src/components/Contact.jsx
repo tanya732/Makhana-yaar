@@ -27,7 +27,7 @@ const channels = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-gradient-to-b from-sand to-cream py-24 bg-grain">
+    <section id="contact" className="relative overflow-hidden bg-gradient-to-b from-sand to-cream py-16 bg-grain">
       <Boat className="pointer-events-none absolute right-6 top-16 w-28 text-navy/[0.15] sm:w-36" />
       <Waves className="pointer-events-none absolute inset-x-0 top-40 h-8 w-full text-navy/[0.12]" />
       <div className="relative mx-auto max-w-4xl px-5">

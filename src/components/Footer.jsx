@@ -14,7 +14,7 @@ export default function Footer() {
             {[
               { Icon: Instagram, href: 'https://instagram.com/makhanayaar', label: 'Instagram' },
               { Icon: Youtube, href: 'https://youtube.com/@makhanayaar', label: 'YouTube' },
-              { Icon: Facebook, href: '#', label: 'Facebook' },
+              { Icon: Facebook, href: 'https://www.facebook.com/share/1DKGDVyYHH/', label: 'Facebook' },
             ].map(({ Icon, href, label }) => (
               <a
                 key={label}

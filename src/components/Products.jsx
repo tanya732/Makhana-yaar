@@ -212,9 +212,9 @@ export default function Products() {
           </span>
           <h2 className="mt-4 flex flex-wrap items-center justify-center gap-3 font-display text-4xl font-bold tracking-tight text-navy sm:text-5xl text-balance">
             Pick your kind of crunch
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-orange px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-sm">
+            {/* <span className="inline-flex items-center gap-1.5 rounded-full bg-orange px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-sm">
               <Clock size={13} /> Coming soon
-            </span>
+            </span> */}
           </h2>
           <p className="mt-4 text-lg text-navy/60">
             Four bold flavours of premium 5+ Suta export-quality makhana are on the way. Packet/Jars are launching shortly, so stay tuned!!

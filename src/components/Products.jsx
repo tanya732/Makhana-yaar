@@ -139,15 +139,27 @@ export default function Products() {
               </div>
             ))}
           </div>
-          <a
-            href={orderUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-[#e8f3eb] px-3 py-2 text-xs font-bold text-[#397a4d] transition-colors hover:bg-[#dcece1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#397a4d]"
-          >
-            <MessageCircle size={16} />
-            Order Now
-          </a>
+          {orderUrl ? (
+            <a
+              href={orderUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-[#e8f3eb] px-3 py-2 text-xs font-bold text-[#397a4d] transition-colors hover:bg-[#dcece1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#397a4d]"
+            >
+              <MessageCircle size={16} />
+              Order Now
+            </a>
+          ) : (
+            <button
+              type="button"
+              disabled
+              title="WhatsApp phone number is not configured for this build"
+              className="mt-3 inline-flex w-full cursor-not-allowed items-center justify-center gap-1.5 rounded-lg bg-[#e8f3eb] px-3 py-2 text-xs font-bold text-[#397a4d] opacity-60"
+            >
+              <MessageCircle size={16} />
+              Order Now
+            </button>
+          )}
         </div>
       </motion.article>
     )
@@ -207,15 +219,27 @@ export default function Products() {
                 <span className="text-xs font-normal text-navy/40 line-through">₹{p.mrp}</span>
               </p>
             </div>
-            <a
-              href={orderUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-[#e8f3eb] px-3 py-2 text-xs font-bold text-[#397a4d] transition-colors hover:bg-[#dcece1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#397a4d]"
-            >
-              <MessageCircle size={16} />
-              Order Now
-            </a>
+            {orderUrl ? (
+              <a
+                href={orderUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-[#e8f3eb] px-3 py-2 text-xs font-bold text-[#397a4d] transition-colors hover:bg-[#dcece1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#397a4d]"
+              >
+                <MessageCircle size={16} />
+                Order Now
+              </a>
+            ) : (
+              <button
+                type="button"
+                disabled
+                title="WhatsApp phone number is not configured for this build"
+                className="mt-3 inline-flex w-full cursor-not-allowed items-center justify-center gap-1.5 rounded-lg bg-[#e8f3eb] px-3 py-2 text-xs font-bold text-[#397a4d] opacity-60"
+              >
+                <MessageCircle size={16} />
+                Order Now
+              </button>
+            )}
           </div>
         </div>
       </motion.article>

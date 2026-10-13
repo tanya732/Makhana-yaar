@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion'
 import { Mail, MessageCircle, MapPin, ArrowUpRight } from 'lucide-react'
 import { Boat, Waves } from './Doodles.jsx'
+import { getWhatsAppUrl } from '../utils/whatsapp.js'
 
 const EMAIL = import.meta.env.VITE_CONTACT_EMAIL || 'makhanayaar@gmail.com'
-// wa.me needs international format, digits only (no +, spaces, or leading 0)
-const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || '918802248503'
 const WHATSAPP_MESSAGE = 'Hi Makhana Yaar! I would like to know more about your makhana.'
 
 const channels = [
@@ -13,7 +12,7 @@ const channels = [
     label: 'Chat on WhatsApp',
     desc: 'Quickest way to reach us for bulk orders, questions, anything.',
     action: 'Open WhatsApp',
-    href: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,
+    href: getWhatsAppUrl(WHATSAPP_MESSAGE),
     external: true,
   },
   {
@@ -42,7 +41,7 @@ export default function Contact() {
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {channels.map((c, i) => (
+          {channels.filter((c) => c.href).map((c, i) => (
             <motion.a
               key={c.label}
               href={c.href}

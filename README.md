@@ -187,9 +187,10 @@ One-time setup in the GitHub repo:
 1. **Settings → Pages → Build and deployment → Source:** choose **GitHub Actions**.
 2. **Settings → Secrets and variables → Actions → New repository secret:** add
    `VITE_WEB3FORMS_KEY` with your Web3Forms key (so the built form works in production).
-   Add `VITE_CONTACT_PHONE` as a repository secret too, using international format with
-   digits only (no `+` or spaces). The workflow passes this value to the build and WhatsApp links.
-3. Push to `main`. The workflow builds the site and publishes `dist/`.
+3. **Settings → Secrets and variables → Actions → Variables:** add `VITE_CONTACT_PHONE`
+   using international format with digits only (no `+` or spaces). The workflow passes this
+   value to the build and WhatsApp links.
+4. Push to `main`. The workflow builds the site and publishes `dist/`.
 
 The site is served from a project subpath, so `vite.config.js` sets:
 ```js

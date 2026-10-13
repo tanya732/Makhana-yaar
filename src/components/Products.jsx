@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ImageIcon, Clock, Package, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ImageIcon, Package, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react'
 import { products, flavourSizes, comboPacks } from '../data.js'
+import { getWhatsAppUrl } from '../utils/whatsapp.js'
 
 const card = {
   hidden: { opacity: 0, y: 40 },
@@ -94,6 +95,7 @@ export default function Products() {
 
   const renderFlavourCard = (p) => {
     const off = Math.round((1 - flavourSizes[0].price / flavourSizes[0].mrp) * 100)
+    const orderUrl = getWhatsAppUrl(`Hi Makhana Yaar! I'd like to order ${p.name} makhana. Please share the available options.`)
     return (
       <motion.article
         variants={card}
@@ -137,6 +139,15 @@ export default function Products() {
               </div>
             ))}
           </div>
+          <a
+            href={orderUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-[#e8f3eb] px-3 py-2 text-xs font-bold text-[#397a4d] transition-colors hover:bg-[#dcece1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#397a4d]"
+          >
+            <MessageCircle size={16} />
+            Order Now
+          </a>
         </div>
       </motion.article>
     )
@@ -144,6 +155,7 @@ export default function Products() {
 
   const renderComboCard = (p) => {
     const off = Math.round((1 - p.price / p.mrp) * 100)
+    const orderUrl = getWhatsAppUrl(`Hi Makhana Yaar! I'd like to order ${p.name}.`)
     return (
       <motion.article
         variants={card}
@@ -195,6 +207,15 @@ export default function Products() {
                 <span className="text-xs font-normal text-navy/40 line-through">₹{p.mrp}</span>
               </p>
             </div>
+            <a
+              href={orderUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-[#e8f3eb] px-3 py-2 text-xs font-bold text-[#397a4d] transition-colors hover:bg-[#dcece1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#397a4d]"
+            >
+              <MessageCircle size={16} />
+              Order Now
+            </a>
           </div>
         </div>
       </motion.article>

@@ -9,8 +9,8 @@ import combo50gImg from './assets/Combo50g.png'
 
 // Shared across all flavours
 export const flavourSizes = [
-  { size: '50g', price: 130, mrp: 150 },
-  { size: '80g', price: 170, mrp: 220 },
+  { size: '50g', price: 120, mrp: 150 },
+  { size: '80g', price: 160, mrp: 220 },
 ]
 
 export const products = [
